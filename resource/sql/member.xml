@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="member">
+	<typeAlias alias="MemberVo" type="com.sds.icto.couplediary.domain.MemberVo" />
+
+	<resultMap class="MemberVo" id="resultMapList">
+		<result column="no" property="no" />
+		<result column="name" property="name" />
+		<result column="member_id" property="member_id" />
+		<result column="password" property="password" />
+		<result column="gender" property="gender" />
+		<result column="couple_id" property="couple_id" />
+	</resultMap>
+
+
+	<select id="getInfo" resultMap="resultMapList">
+		<![CDATA[
+		select *
+		    from member where member_id =  #member_id# and password = #password#
+		]]>
+	</select>
+
+
+	<insert id="insert" parameterClass="MemberVo">
+		<![CDATA[
+		insert
+		  into member
+		values ( member_no_seq.nextval, #name#, #member_id#, #password#, #gender# , '임시')
+		]]>
+	</insert>
+
+	<select id="view" resultMap="resultMapList">
+		<![CDATA[
+		select *
+		  from member where no=#no#
+		]]>
+	</select>
+
+
+	<update id="couplejoin" parameterClass="MemberVo">
+		<![CDATA[
+		update member
+		 set couple_id=#couple_id#
+		 where no = #no#
+		]]>
+	</update>
+
+
+	<select id="check" resultClass="MemberVo">
+		<![CDATA[
+			select * 
+			  from member
+			where member_id=#member_id#
+		]]>
+	</select>
+
+</sqlMap>
