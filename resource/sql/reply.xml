@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="reply">
+	<typeAlias alias="ReplyVo" type="com.sds.icto.couplediary.domain.ReplyVo" />
+	
+	
+	<resultMap class="ReplyVo" id="resultMapList">
+		<result column="no" property="no" />
+		<result column="name" property="name" />
+		<result column="member_id" property="member_id" />
+		<result column="password" property="password" />
+		<result column="gender" property="gender" />
+		<result column="couple_id" property="couple_id" />
+	</resultMap>
+	
+	
+	<insert id="insert" parameterClass="ReplyVo">
+	<![CDATA[
+		insert reply
+		values( reply_no_seq.nextval, #name#, #member_id#, ) 
+	
+	
+	
+	
+	
+	]]>
+	
+	
+	</insert>
+	
+	
+</sqlMap>

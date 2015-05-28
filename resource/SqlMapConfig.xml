@@ -11,6 +11,7 @@
 	<sqlMap resource="sql/guestbook.xml" />
 	<sqlMap resource="sql/member.xml" />
 	<sqlMap resource="sql/board.xml" />
+	<sqlMap resource="sql/reply.xml" />
 		
 
 </sqlMapConfig>
