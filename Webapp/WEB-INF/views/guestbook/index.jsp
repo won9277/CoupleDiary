@@ -68,9 +68,11 @@
 									<td>${g.no }</td>
 									<td>${g.member_id }</td>
 									<td>${g.regDate}</td>
+									
 									<c:if test="${authMember.no==g.no}">
-									<td><a href="/CoupleDiary/guestbook/delete/${g.no }">삭제</a></td>
+									<td><a href="/CoupleDiary/guestbook/delete/${g.no }">삭제임당</a></td>
 									</c:if>
+									
 								</tr>
 								<tr>
 									<td colspan=4>${fn:replace(g.message, newLineChar, "<br>")
