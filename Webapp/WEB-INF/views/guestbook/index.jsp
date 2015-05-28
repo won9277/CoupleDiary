@@ -70,8 +70,9 @@
 									<td>${g.regDate}</td>
 									
 									<c:if test="${authMember.no==g.no}">
-									<td><a href="/CoupleDiary/guestbook/delete/${g.no }">삭제임당</a></td>
+									<td><a href="/CoupleDiary/guestbook/delete/${g.no }">삭제임당dd</a></td>
 									</c:if>
+								
 									
 								</tr>
 								<tr>
