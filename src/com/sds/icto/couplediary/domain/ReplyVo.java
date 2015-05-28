@@ -5,6 +5,7 @@ public class ReplyVo {
 	private String content;
 	private String member_no;
 	private String member_id;
+	private String name;
 	private String reg_date;
 	
 	
@@ -39,5 +40,12 @@ public class ReplyVo {
 	public void setReg_date(String reg_date) {
 		this.reg_date = reg_date;
 	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 
+	
 }
