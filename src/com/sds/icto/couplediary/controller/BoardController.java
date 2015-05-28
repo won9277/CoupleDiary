@@ -14,8 +14,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sds.icto.couplediary.domain.BoardVo;
+import com.sds.icto.couplediary.domain.ReplyVo;
 import com.sds.icto.couplediary.repository.BoardDao;
+import com.sds.icto.couplediary.repository.ReplyDao;
 import com.sds.icto.couplediary.service.BoardService;
+import com.sds.icto.couplediary.service.ReplyService;
 
 @Controller
 @RequestMapping("/board")
@@ -26,6 +29,12 @@ public class BoardController {
 
 	@Autowired
 	BoardService boardService;
+	
+	@Autowired
+	ReplyDao replyDao;
+	
+	@Autowired
+	ReplyService replyService;
 
 	@RequestMapping("/index")
 	public String index(Model model, @ModelAttribute BoardVo vo) {
@@ -49,6 +58,11 @@ public class BoardController {
 	@RequestMapping(value = "/view/{no}", method = RequestMethod.GET)
 	public String showBoard(@PathVariable Long no, Model model) {
 		model.addAttribute("no", no);
+		
+		//댓글 불러오기
+		List<ReplyVo> list = replyService.replyList(no); 
+		model.addAttribute("list", list);
+		
 		BoardVo boardvo = boardService.showBoard(no);
 		model.addAttribute("boardvo", boardvo);
 		boardService.boardUpdateViewcnt(boardvo);
@@ -94,6 +108,13 @@ public class BoardController {
 		List<BoardVo> findlist = boardService.boardFind(keyword);
 		model.addAttribute("list", findlist);
 		return "board/index";
+	}
+	
+	@RequestMapping("/insert")
+	public String insert(Long no, @ModelAttribute ReplyVo vo){
+	
+		replyDao.insert(vo);
+		return "redirect:/board/view/"+vo.getBoard_no();
 	}
 
 }
