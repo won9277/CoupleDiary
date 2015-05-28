@@ -82,7 +82,7 @@ member_id    VARCHAR2(30),
 name 		 VARCHAR2(30),	
 board_no  NUMBER(8),
 reg_date     DATE
-) ;
+) ;	
 
 ALTER TABLE reply
 ADD ( CONSTRAINT reply_no_pk PRIMARY KEY ( no ) );
