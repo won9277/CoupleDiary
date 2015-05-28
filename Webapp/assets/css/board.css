@@ -36,7 +36,7 @@ input#kwd	{
 	width:100%;
 	margin:10px auto; 
 	border-collapse:collapse;
-	border-bottom:2px solid #333;
+	border-bottom:2px solid #F59A9A;
 }
 
 .tbl-ex th, 
@@ -46,17 +46,48 @@ input#kwd	{
 }
 	
 .tbl-ex th	{ 
-	border-top:1px dashed #F59A9A;
-	border-bottom:1px dashed #F59A9A; 
+	border-top:2px solid #F59A9A;
+	 border-bottom:2px solid #F59A9A;
 	background-color:#FFF; 
 	font-size:1.1em; 
 	color:#000 
 }
 
+
+
 .tbl-ex td {
 	border-top:1px dashed #F59A9A;
 	border-bottom:1px dashed #F59A9A; 
 }
+
+.tbl-re		{
+	width:100%;
+	margin:10px auto; 
+	border-collapse:collapse;
+	border-bottom:2px solid #F59A9A;
+}
+
+.tbl-re td {
+	border-top:1px dashed #F59A9A;
+	border-bottom:1px dashed #F59A9A; 
+	padding: 5px;
+	text-align: center;
+	
+}
+	
+	
+.tbl-re th {
+	text-align : center;
+	border-top:2px solid #F59A9A;
+	border-bottom:1px solid #F59A9A; 
+	background-color:#FFF; 
+	font-size:1.2em; 
+	color:#000;
+	padding: 10px;
+}
+
+
+	
 
 .board-form .tbl-ex td {
 	text-align:left;
@@ -91,11 +122,21 @@ div.bottom {
 	width:100%;
 	height:50px;
 	margin:20px auto;
+	
 }
 
 div.bottom a { 
 	text-decoration:none; 
 	dispaly:block;
+	
+}
+
+div.div-re{
+	
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.2em;
+	
 }
 
 a#new-book	 { 
@@ -132,3 +173,4 @@ img {
 	
 	width: 10px;
 }
+

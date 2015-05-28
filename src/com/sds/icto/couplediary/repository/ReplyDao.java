@@ -24,5 +24,9 @@ public class ReplyDao {
 		return list;
 	}
 	
+	
+	public void delete(int no){
+		sqlMapClientTemplate.delete("reply.delete", no);
+	}
 
 }

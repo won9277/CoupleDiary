@@ -111,10 +111,16 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/insert")
-	public String insert(Long no, @ModelAttribute ReplyVo vo){
-	
+	public String insert( @ModelAttribute ReplyVo vo){
 		replyDao.insert(vo);
+		System.out.println(vo.getBoard_no());
 		return "redirect:/board/view/"+vo.getBoard_no();
+	}
+	
+	@RequestMapping(value="/redelete", method=RequestMethod.GET)
+	public String delete(@RequestParam int no, @RequestParam int boardno){
+		replyDao.delete(no);
+		return "redirect:/board/view/"+boardno;
 	}
 
 }

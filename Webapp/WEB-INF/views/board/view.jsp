@@ -16,7 +16,7 @@
 			<div id="board" class="board-form">
 				<table class="tbl-ex">
 					<tr>
-						<th colspan="2">글보기</th>
+						<th colspan="4">글보기</th>
 					</tr>
 					<tr>
 						<td class="label">제목</td>
@@ -24,7 +24,7 @@
 					</tr>
 					<tr>
 						<td class="label">내용</td>
-						<td cols>
+						<td >
 							<div class="view-content">
 							${boardvo.content}
 							</div>
@@ -32,24 +32,31 @@
 					</tr>
 					</table>
 					
-					<table id = "tbl-re">
+					<div class="div-re">
+						<p> reply </p>
+					</div>
+				
 					
+					<table class = "tbl-re">
+				
 					<tr> 
-						<td> name </td>
-						<td> content </td>
+						<th colspan="1"> name </th>
+						<th colspan="3"> content </th>
+						<th></th>
 					</tr>
 					<c:forEach var="r" items="${list }">
 						<tr>
 							<td> ${r.member_id }</td>
-							<td> ${r.content }</td>
-							<td> ${r.reg_date }</td>
+							<td colspan="2"> ${r.content }</td>
+							<td> ${r.reg_date }  </td>
+							<td> <a href="/CoupleDiary/board/redelete?no=${r.no}&boardno=${boardvo.no}">삭제</a>
 							</tr>
 					</c:forEach>
 					
 					
 					<tr>
 						<td> reply</td>
-						<td> 
+						<td colspan="4"> 
 						<form action="/CoupleDiary/board/insert" method="post">
 							<input type ="text" name = "content">
 							<input type ="hidden" name = "member_id" value ="${authMember.member_id }">

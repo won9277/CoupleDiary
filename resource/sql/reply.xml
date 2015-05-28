@@ -22,10 +22,18 @@
 	
 	<select id="list" resultMap="resultMapList">
 	<![CDATA[
-		select * from reply where board_no = #no#
+		select * from reply where board_no = #no# 
+		order by reg_date desc
 	]]>
 	
 	</select>
+	
+	<delete id="delete" parameterClass="java.lang.Integer">
+	<![CDATA[
+		DELETE from reply
+			WHERE no = #value#
+	]]>
+	</delete>
 	
 	
 </sqlMap>
