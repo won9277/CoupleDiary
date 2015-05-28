@@ -6,27 +6,27 @@
 	
 	<resultMap class="ReplyVo" id="resultMapList">
 		<result column="no" property="no" />
-		<result column="name" property="name" />
+		<result column="content" property="content" />
+		<result column="member_no" property="member_no" />
 		<result column="member_id" property="member_id" />
-		<result column="password" property="password" />
-		<result column="gender" property="gender" />
-		<result column="couple_id" property="couple_id" />
+		<result column="name" property="name" />
+		<result column="reg_date" property="reg_date" />
 	</resultMap>
 	
 	
 	<insert id="insert" parameterClass="ReplyVo">
 	<![CDATA[
 		insert reply
-		values( reply_no_seq.nextval, #name#, #member_id#, ) 
+		values( reply_no_seq.nextval, #content#, #member_no#, #member_id#, #name#, sysdate) 
+	]]>
+	</insert>
 	
-	
-	
-	
-	
+	<select id="list">
+	<![CDATA[
+		select * from reply
 	]]>
 	
-	
-	</insert>
+	</select>
 	
 	
 </sqlMap>
