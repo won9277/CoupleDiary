@@ -21,6 +21,7 @@ import com.sds.icto.couplediary.service.BoardService;
 @RequestMapping("/board")
 public class BoardController {
 
+	//커밋할꺼야
 	@Autowired
 	BoardDao boardDao;
 
