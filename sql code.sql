@@ -71,18 +71,16 @@ CREATE SEQUENCE member_no_seq
  NOCYCLE;
 
 
- 
 drop table reply;
-
 drop sequence reply_no_seq;
 
 CREATE TABLE reply
 ( 
 no        NUMBER(8),
-content      VARCHAR2(2000) NOT NULL,
-member_no     NUMBER(8),
+content      VARCHAR2(2000),
 member_id    VARCHAR2(30),
 name 		 VARCHAR2(30),	
+board_no  NUMBER(8),
 reg_date     DATE
 ) ;
 
@@ -96,5 +94,6 @@ CREATE SEQUENCE reply_no_seq
  MAXVALUE       99999999
  NOCACHE
  NOCYCLE;
-
+ 
+ 
  
