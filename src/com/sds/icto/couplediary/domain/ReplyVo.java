@@ -9,7 +9,6 @@ public class ReplyVo {
 	private String reg_date;
 	
 	
-	
 	public Long getNo() {
 		return no;
 	}

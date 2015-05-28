@@ -17,16 +17,16 @@
 	<insert id="insert" parameterClass="ReplyVo">
 	<![CDATA[
 		insert reply
-		values( reply_no_seq.nextval, #content#, #member_id#, #) 
+		values( reply_no_seq.nextval, #content#, #member_no#, #member_id#, #name#, sysdate) 
+	]]>
+	</insert>
 	
-	
-	
-	
-	
+	<select id="list">
+	<![CDATA[
+		select * from reply
 	]]>
 	
-	
-	</insert>
+	</select>
 	
 	
 </sqlMap>
