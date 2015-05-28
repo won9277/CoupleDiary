@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>mysite</title>
+<title>♡couple diary 니캉내캉♡</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <link href="/CoupleDiary/assets/css/user.css" rel="stylesheet"
 	type="text/css">
