@@ -12,7 +12,7 @@ public class ReplyController {
 	public String insert(ReplyVo vo){
 		
 		
-		return "";
+		return "하잉";
 	}
 	
 	

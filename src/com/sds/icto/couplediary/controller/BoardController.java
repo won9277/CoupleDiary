@@ -22,7 +22,7 @@ import com.sds.icto.couplediary.service.BoardService;
 public class BoardController {
 
 	@Autowired
-	BoardDao boardDao;
+	BoardDao boardDao; ///
 
 	@Autowired
 	BoardService boardService;
