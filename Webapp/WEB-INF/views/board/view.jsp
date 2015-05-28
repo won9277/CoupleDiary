@@ -24,10 +24,39 @@
 					</tr>
 					<tr>
 						<td class="label">내용</td>
-						<td>
+						<td cols>
 							<div class="view-content">
 							${boardvo.content}
 							</div>
+						</td>
+					</tr>
+					</table>
+					
+					<table id = "tbl-re">
+					
+					<tr> 
+						<td> name </td>
+						<td> content </td>
+					</tr>
+					<c:forEach var="r" items="${list }">
+						<tr>
+							<td> ${r.member_id }</td>
+							<td> ${r.content }</td>
+							<td> ${r.reg_date }</td>
+							</tr>
+					</c:forEach>
+					
+					
+					<tr>
+						<td> reply</td>
+						<td> 
+						<form action="/CoupleDiary/board/insert" method="post">
+							<input type ="text" name = "content">
+							<input type ="hidden" name = "member_id" value ="${authMember.member_id }">
+							<input type ="hidden" name = "name" value ="${authMember.name }">
+							<input type ="hidden" name = "board_no" value ="${boardvo.no}">
+							<input type ="submit" value ="입력">
+						</form>						
 						</td>
 					</tr>
 				</table>
