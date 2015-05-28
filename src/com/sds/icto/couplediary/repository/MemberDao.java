@@ -1,9 +1,13 @@
 package com.sds.icto.couplediary.repository;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.sds.icto.couplediary.domain.BoardVo;
 import com.sds.icto.couplediary.domain.MemberVo;
 
 @Repository
@@ -48,6 +52,16 @@ public class MemberDao {
 		} else {
 			return true;
 		}
+	}
+	
+	public List<MemberVo> findList(String keyword) {
+
+		List<MemberVo> findlist = new ArrayList<MemberVo>();
+
+		findlist = (List<MemberVo>) sqlMapClientTemplate.queryForList(
+				"board.find", keyword);
+
+		return findlist;
 	}
 
 }

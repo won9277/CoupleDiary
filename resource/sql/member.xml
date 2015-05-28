@@ -53,5 +53,13 @@
 			where member_id=#member_id#
 		]]>
 	</select>
+	
+	<select id="find" resultMap="resultMapList">
+		<![CDATA[
+		select *
+		  from member where member_id like '%' || #keyword# || '%'
+		  order by no
+		]]>
+	</select>
 
 </sqlMap>

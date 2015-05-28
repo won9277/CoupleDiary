@@ -28,3 +28,37 @@ input[type="submit"]	{ display:block; width:80px; margin:20px auto }
 #user p		{ text-align:center; padding:10px}
 
 #user p.jr-success	{ height:200px }
+
+
+
+.tbl-ex		{
+	width:100%;
+	margin:10px auto; 
+	border-collapse:collapse;
+	border-bottom:2px solid #333;
+}
+
+.tbl-ex th, 
+.tbl-ex td	{ 
+	padding:8px;
+	text-align:center; 	 
+}
+	
+.tbl-ex th	{ 
+	border-top:1px dashed #F59A9A;
+	border-bottom:1px dashed #F59A9A; 
+	background-color:#FFF; 
+	font-size:1.1em; 
+	color:#000 
+}
+
+.tbl-ex td {
+	border-top:1px dashed #F59A9A;
+	border-bottom:1px dashed #F59A9A; 
+}
+.tbl-ex a { text-decoration:none; font-weight:bold; }
+
+img {
+	
+	width: 10px;
+}

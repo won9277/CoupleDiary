@@ -11,6 +11,20 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <link href="/CoupleDiary/assets/css/user.css" rel="stylesheet"
 	type="text/css">
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script type="text/javascript"
+	src="/CoupleDiary/assets/js/jquery/jquery-1.9.0.js"></script>
+<script>
+	$(function() {
+
+		$("#submit_couple_id").click(function() {
+
+				alert("커플아이디가 등록되었습니다.");
+			
+		});
+	});
+</script>
+
 </head>
 <body>
 	<div id="container">
@@ -19,17 +33,50 @@
 		</div>
 		<div id="content">
 			<div id="edit">
-				<form id="edit-form" name="editForm" method="post" action="/CoupleDiary/member/editform">
-				<input type="hidden" name="no" value="${authMember.no }">			
-				이름 : ${vo.name } <br>
-	
-				아이디 : ${vo.member_id } <br>
-				
-				<label class="block-label" for="couple_id">커플아이디 : </label>
-				<input type="text" name = "couple_id" value ="${vo.couple_id }">
-				
-				<input type="submit" value="등록하기">
-				 <br><a href ="/CoupleDiary/index">메인으로 돌아가기</a>
+				<form id="edit-form" name="editForm" method="post"
+					action="/CoupleDiary/member/editform">
+					<table class="tbl-ex">
+						<input type="hidden" name="no" value="${authMember.no }">
+						<tr>
+							<td><img src="/CoupleDiary/assets/css/images/heart.png"></td>
+							<td><h3>이름</h3></td>
+							<td></td>
+							<td><h3>:</h3></td>
+							<td></td>
+							<td></td>
+							<td><h4>${vo.name }</h4></td>
+							<td></td>
+							<td></td>
+							<td><img src="/CoupleDiary/assets/css/images/heart.png"></td>
+						</tr>
+						<tr>
+							<td><img src="/CoupleDiary/assets/css/images/heart.png"></td>
+							<th><h3>아이디</h3></th>
+							<td></td>
+							<td><h3>:</h3></td>
+							<td></td>
+							<td></td>
+							<td><h4>${vo.member_id }</h4></td>
+							<td></td>
+							<td></td>
+							<td><img src="/CoupleDiary/assets/css/images/heart.png"></td>
+						</tr>
+						<tr>
+							<td><img src="/CoupleDiary/assets/css/images/heart.png"></td>
+							<th><label class="block-label" for="couple_id"><h3>커플아이디</h3></label></th>
+							<td></td>
+							<td><h3>:</h3></td>
+							<td></td>
+							<td></td>
+							<th><input type="text" name="couple_id"
+								value="${vo.couple_id }"></th>
+							<td></td>
+							<td><input id="submit_couple_id" type="submit" value="등록하기"></td>
+							<td><img src="/CoupleDiary/assets/css/images/heart.png"></td>
+					</table>
+
+
+					<br> <a href="/CoupleDiary/index">메인으로 돌아가기</a>
 				</form>
 			</div>
 		</div>
