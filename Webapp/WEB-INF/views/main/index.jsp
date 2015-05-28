@@ -18,7 +18,7 @@
 		<div id="wrapper">
 			<div id="content">
 				<div id="site-introduction">
-					<img id="profile" src="https://pbs.twimg.com/media/BrDn_WhCIAA-OQg.jpg:large">
+					<img id="profile" src="/CoupleDiary/assets/images/main.jpg">
 					
 				</div>
 			</div>
