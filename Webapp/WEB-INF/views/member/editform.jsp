@@ -18,9 +18,7 @@
 	$(function() {
 
 		$("#submit_couple_id").click(function() {
-
 				alert("커플아이디가 등록되었습니다.");
-			
 		});
 	});
 </script>
